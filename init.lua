@@ -1,0 +1,11 @@
+vim.cmd('source $HOME/.config/nvim/lua/plugins.vim')
+vim.cmd('source $HOME/.config/nvim/lua/settings.vim')
+vim.cmd('source $HOME/.config/nvim/lua/scripts.vim')
+vim.cmd('source $HOME/.config/nvim/lua/snippets.vim')
+vim.cmd('source $HOME/.config/nvim/lua/telescope.vim')
+
+require('colorscheme')
+require('otherplugins')
+require('treesitter')
+require('lsp')
+require('nvimtree')
