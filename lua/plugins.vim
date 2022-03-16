@@ -28,6 +28,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 	" lsp, highlighting & completion
 	Plug 'nvim-treesitter/nvim-treesitter'
+	Plug 'nvim-treesitter/playground'
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'williamboman/nvim-lsp-installer'
 	Plug 'hrsh7th/cmp-nvim-lsp'

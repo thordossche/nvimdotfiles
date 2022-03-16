@@ -14,7 +14,12 @@
       NvimTreeNormalNC = { bg = "NONE" },
       NvimTreeRootFolder = { fg = "${yellow}" },
   },
-
+  filetype_hlgroups = {
+    java = {
+      TSVariable = { fg = "NONE" },
+      TSField = { fg = "${red}" }
+    },
+  },
   options = {
       cursorline = true,
       transparency = true,

@@ -36,8 +36,3 @@ vnoremap <leader>p "+P
 " Remap pageUp and pageDown
 map <PageUp> <C-u>
 map <PageDown> <C-d>
-
-
-lua << EOF
-vim.api.nvim_set_keymap("n", "<leader>a", ':%y<cr>', { noremap = false, silent = true })
-EOF
