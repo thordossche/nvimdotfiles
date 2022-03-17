@@ -27,6 +27,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
 	Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+	Plug 'AckslD/nvim-neoclip.lua'
 
 	" lsp, highlighting & completion
 	Plug 'nvim-treesitter/nvim-treesitter'
