@@ -48,4 +48,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'metakirby5/codi.vim'
 	Plug 'sheerun/vim-polyglot'
 	Plug 'akinsho/toggleterm.nvim'
+	Plug 'lewis6991/gitsigns.nvim'
+
 call plug#end()

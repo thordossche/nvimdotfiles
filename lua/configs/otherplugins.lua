@@ -12,3 +12,6 @@ require('lualine').setup({
     },
   },
 })
+
+-- gitsigns
+require('gitsigns').setup()

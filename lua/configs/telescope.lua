@@ -14,3 +14,5 @@ vim.api.nvim_set_keymap(
   { noremap = true }
 )
 vim.api.nvim_set_keymap('n', '<leader>p', '<cmd>Telescope neoclip<cr>', { noremap = true })
+
+vim.api.nvim_set_keymap('n', '<leader>z', ':lua require"telescope.builtin".find_files({cwd = "~/.config/nvim/lua/configs"}) <CR>', {})
