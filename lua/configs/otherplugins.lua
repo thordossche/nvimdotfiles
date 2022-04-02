@@ -1,3 +1,8 @@
+-- quickfixlist
+vim.api.nvim_set_keymap("n", "<leader>lo", ":copen<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>lc", ":cclose<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>ln", ":cnext<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>lp", ":cprev<cr>", {})
 -- source config
 vim.api.nvim_set_keymap("n", "<leader>s", ":source ~/.config/nvim/init.lua<cr>", {})
 
