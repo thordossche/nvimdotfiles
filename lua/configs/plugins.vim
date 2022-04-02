@@ -43,6 +43,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'hrsh7th/cmp-nvim-lua'
 	Plug 'jose-elias-alvarez/null-ls.nvim'
 	Plug 'windwp/nvim-autopairs'
+	Plug 'L3MON4D3/LuaSnip'
+	Plug 'saadparwaiz1/cmp_luasnip'
   
   " other
 	Plug 'metakirby5/codi.vim'
