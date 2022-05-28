@@ -38,6 +38,10 @@ vnoremap <leader>p "+P
 map <PageUp> <C-u>
 map <PageDown> <C-d>
 
+" tabs
+autocmd Filetype vue setlocal ts=2 sw=2 sts=0 noexpandtab
+
+
 function! DisableST()
   return " "
 endfunction

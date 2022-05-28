@@ -10,6 +10,12 @@ luasnip.config.set_config({
 luasnip.snippets = {
     all = {
         luasnip.parser.parse_snippet("expand", "--expanded")
+    },
+    javascript = {
+        luasnip.parser.parse_snippet("clog", "console.log($1)")
+    },
+    vue = {
+        luasnip.parser.parse_snippet("clog", "console.log($1)")
     }
 }
 
