@@ -19,6 +19,10 @@
       TSVariable = { fg = "NONE" },
       TSField = { fg = "${red}" }
     },
+    python = {
+      TSVariable = { fg = "NONE" },
+      TSField = { fg = "${red}" }
+    },
   },
   options = {
       cursorline = true,
