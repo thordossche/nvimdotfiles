@@ -1,6 +1,6 @@
 vim.api.nvim_set_keymap('n', 'H', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'L', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'q', ':write | Bdelete<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'Q', ':write | Bdelete<CR>', { noremap = true, silent = true })
 
 require('bufferline').setup {
   options = {
