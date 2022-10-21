@@ -12,11 +12,7 @@ set laststatus=3
 " search settings
 set ignorecase
 set smartcase
-nnoremap <leader><CR> :nohlsearch<CR>
 
-" split current file
-nnoremap <leader>/h :split<Enter>
-nnoremap <leader>/v :vsplit<Enter>
 " tab open settings
 set splitbelow
 set splitright
