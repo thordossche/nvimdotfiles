@@ -7,6 +7,7 @@ set number relativenumber
 set scrolloff=10
 set expandtab
 set mouse=a
+set laststatus=3
 
 " search settings
 set ignorecase
@@ -40,9 +41,3 @@ map <PageDown> <C-d>
 
 " tabs
 autocmd Filetype vue setlocal ts=2 sw=2 sts=0 noexpandtab
-
-
-function! DisableST()
-  return " "
-endfunction
-au BufEnter NvimTree setlocal statusline=%!DisableST()
