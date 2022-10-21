@@ -1,8 +1,8 @@
 -- quickfixlist
-vim.api.nvim_set_keymap("n", "<leader>lo", ":copen<cr>", {})
-vim.api.nvim_set_keymap("n", "<leader>lc", ":cclose<cr>", {})
-vim.api.nvim_set_keymap("n", "<leader>ln", ":cnext<cr>", {})
-vim.api.nvim_set_keymap("n", "<leader>lp", ":cprev<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>qo", ":copen<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>qc", ":cclose<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>qn", ":cnext<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>qp", ":cprev<cr>", {})
 -- source config
 vim.api.nvim_set_keymap("n", "<leader>s", ":source ~/.config/nvim/init.lua<cr>", {})
 
@@ -19,4 +19,4 @@ require('lualine').setup({
 })
 
 -- gitsigns
-require('gitsigns').setup()
+-- require('gitsigns').setup()
