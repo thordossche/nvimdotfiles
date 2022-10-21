@@ -20,5 +20,18 @@ require('lualine').setup({
   },
 })
 
--- gitsigns
--- require('gitsigns').setup()
+vim.o.cmdheight = 0 
+-- Workaround to show macro recording indicator
+local cmdheightaugroup = vim.api.nvim_create_augroup('cmdheight', {clear = true})
+vim.api.nvim_create_autocmd('RecordingEnter', {
+  group = cmdheightaugroup,
+  callback = function()
+    vim.o.cmdheight = 1
+  end
+})
+vim.api.nvim_create_autocmd('RecordingLeave', {
+  group = cmdheightaugroup,
+  callback = function()
+    vim.o.cmdheight = 0
+  end
+})
