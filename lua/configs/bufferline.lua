@@ -14,6 +14,7 @@ require('bufferline').setup {
     tab_size = 18,
     diagnostics = false,
     diagnostics_update_in_insert = false,
+    buffer_close_icon= "",
     offsets = {
       {
         filetype = "NvimTree" ,
@@ -24,7 +25,7 @@ require('bufferline').setup {
   },
   highlights = {
     indicator_selected = {
-        guifg = "#61AFEF",
+        guifg = "NONE",
         guibg = "NONE",
     },
   }
