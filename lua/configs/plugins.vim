@@ -3,7 +3,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-repeat'
-	Plug 'tpope/vim-fugitive'
 
 	" filetree
 	Plug 'kyazdani42/nvim-tree.lua'
