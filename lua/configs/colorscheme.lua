@@ -6,7 +6,7 @@
      red = "#E06C75",
      gray = "#7D828D",
      },
-  hlgroups = {
+  highlights = {
       CursorLineNr = { fg = "${yellow}", bg = "NONE" },
       TabLineSel = { bg = "NONE", fg = "${yellow}" },
 
@@ -14,16 +14,16 @@
       NvimTreeNormalNC = { bg = "NONE" },
       NvimTreeRootFolder = { fg = "${yellow}" },
   },
-  filetype_hlgroups = {
-    java = {
-      TSVariable = { fg = "NONE" },
-      TSField = { fg = "${red}" }
-    },
-    python = {
-      TSVariable = { fg = "NONE" },
-      TSField = { fg = "${red}" }
-    },
-  },
+  -- ft_highlights = {
+  --   java = {
+  --     TSVariable = { fg = "NONE" },
+  --     TSField = { fg = "${red}" }
+  --   },
+  --   python = {
+  --     TSVariable = { fg = "NONE" },
+  --     TSField = { fg = "${red}" }
+  --   },
+  -- },
   options = {
       cursorline = true,
       transparency = true,
