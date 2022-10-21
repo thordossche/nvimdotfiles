@@ -12,9 +12,11 @@ vim.api.nvim_set_keymap("n", "<leader>gs", ":G<CR>", {})
 -- lualine
 require('lualine').setup({
   options = {
-    disabled_filetypes = {
-      "NvimTree"
-    },
+    component_separators = { left = '', right = ''},
+  },
+  sections = {
+    lualine_c = {'%=', 'filename'},
+    lualine_x = {'filetype'},
   },
 })
 
