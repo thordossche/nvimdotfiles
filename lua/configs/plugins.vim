@@ -1,8 +1,7 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
 	" basics
-	Plug 'tpope/vim-surround'
-	Plug 'tpope/vim-commentary'
-	Plug 'tpope/vim-repeat'
+	Plug 'kylechui/nvim-surround'
+	Plug 'numToStr/Comment.nvim'
 
 	" filetree
 	Plug 'kyazdani42/nvim-tree.lua'
@@ -19,7 +18,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'nvim-lualine/lualine.nvim'
 
 	" moving
-	Plug 'ggandor/lightspeed.nvim'
+	Plug 'ggandor/leap.nvim'
 
 	" telescope
 	Plug 'nvim-lua/popup.nvim'

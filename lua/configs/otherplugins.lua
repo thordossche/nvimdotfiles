@@ -3,8 +3,18 @@ vim.api.nvim_set_keymap("n", "<leader>qo", ":copen<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>qc", ":cclose<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>qn", ":cnext<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>qp", ":cprev<cr>", {})
+
 -- source config
 vim.api.nvim_set_keymap("n", "<leader>s", ":source ~/.config/nvim/init.lua<cr>", {})
+
+-- comment
+require('Comment').setup()
+
+-- surround
+require("nvim-surround").setup()
+
+-- leap
+require('leap').add_default_mappings()
 
 -- lualine
 require('lualine').setup({
