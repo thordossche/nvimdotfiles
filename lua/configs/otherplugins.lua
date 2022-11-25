@@ -16,6 +16,12 @@ require("nvim-surround").setup()
 -- leap
 require('leap').add_default_mappings()
 
+-- -- lsp_signature
+-- require('lsp_signature').setup({
+--   floating_window = false,
+--   hint_prefix = "> ",
+-- })
+
 -- lualine
 require('lualine').setup({
   options = {
@@ -42,3 +48,4 @@ vim.api.nvim_create_autocmd('RecordingLeave', {
     vim.o.cmdheight = 0
   end
 })
+

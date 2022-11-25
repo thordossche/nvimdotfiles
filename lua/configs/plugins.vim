@@ -42,11 +42,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'windwp/nvim-autopairs'
 	Plug 'L3MON4D3/LuaSnip'
 	Plug 'saadparwaiz1/cmp_luasnip'
+	Plug 'ray-x/lsp_signature.nvim'
   
   " other
 	Plug 'metakirby5/codi.vim'
 	Plug 'sheerun/vim-polyglot'
 	Plug 'akinsho/toggleterm.nvim'
 	Plug 'lewis6991/gitsigns.nvim'
+	Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
