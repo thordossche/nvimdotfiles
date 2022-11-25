@@ -57,8 +57,8 @@ cmp.setup {
   --     max_item_count
   sources = {
 
-    { name = "nvim_lsp", max_item_count=12 },
     { name = "luasnip" },
+    { name = "nvim_lsp", max_item_count=12 },
     { name = "null_ls" },
     { name = "nvim_lua" },
     { name = "path" },
@@ -81,8 +81,6 @@ cmp.setup {
         path = "[path]",
         null_ls = "[linter]",
         luasnip = "[snip]",
-        -- gh_issues = "[issues]",
-        -- tn = "[TabNine]",
       },
     },
   },
