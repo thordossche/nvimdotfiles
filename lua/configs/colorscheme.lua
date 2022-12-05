@@ -13,6 +13,8 @@
       NvimTreeFolderIcon = { fg = "${yellow}" },
       NvimTreeNormalNC = { bg = "NONE" },
       NvimTreeRootFolder = { fg = "${yellow}" },
+      ["@variable.python"] = { fg = "NONE" },
+      ["@field.python"] = { fg = "${red}" },
   },
   -- ft_highlights = {
   --   java = {
