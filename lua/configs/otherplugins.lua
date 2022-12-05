@@ -4,6 +4,12 @@ vim.api.nvim_set_keymap("n", "<leader>qc", ":cclose<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>qn", ":cnext<cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>qp", ":cprev<cr>", {})
 
+-- autopairs
+require("nvim-autopairs").setup {
+  check_ts = true,
+  disable_filetype = { "TelescopePrompt" },
+}
+
 -- source config
 vim.api.nvim_set_keymap("n", "<leader>s", ":source ~/.config/nvim/init.lua<cr>", {})
 
