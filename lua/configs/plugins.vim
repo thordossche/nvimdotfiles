@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	" basics
 	Plug 'kylechui/nvim-surround'
 	Plug 'numToStr/Comment.nvim'
+	Plug 'windwp/nvim-autopairs'
 
 	" filetree
 	Plug 'kyazdani42/nvim-tree.lua'
@@ -27,22 +28,27 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 	Plug 'AckslD/nvim-neoclip.lua'
 
-	" lsp, highlighting & completion
-	Plug 'nvim-treesitter/nvim-treesitter'
-	Plug 'nvim-treesitter/playground'
+	" LSP
+	Plug 'williamboman/mason.nvim'
+	Plug 'williamboman/mason-lspconfig.nvim'
 	Plug 'neovim/nvim-lspconfig'
-	Plug 'williamboman/nvim-lsp-installer'
+	Plug 'onsails/lspkind-nvim'
+
+	" completion
 	Plug 'hrsh7th/cmp-nvim-lsp'
 	Plug 'hrsh7th/cmp-buffer'
 	Plug 'hrsh7th/cmp-path'
 	Plug 'hrsh7th/cmp-cmdline'
-	Plug 'hrsh7th/nvim-cmp'
-	Plug 'onsails/lspkind-nvim'
 	Plug 'hrsh7th/cmp-nvim-lua'
-	Plug 'windwp/nvim-autopairs'
+	Plug 'hrsh7th/nvim-cmp'
+
+	" snippets
 	Plug 'L3MON4D3/LuaSnip'
 	Plug 'saadparwaiz1/cmp_luasnip'
-	Plug 'ray-x/lsp_signature.nvim'
+
+	" treesitter
+	Plug 'nvim-treesitter/nvim-treesitter'
+	Plug 'nvim-treesitter/playground'
   
   " other
 	Plug 'metakirby5/codi.vim'

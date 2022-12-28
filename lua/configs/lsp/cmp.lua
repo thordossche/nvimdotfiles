@@ -84,19 +84,15 @@ cmp.setup {
       },
     },
   },
-
-  experimental = {
-    ghost_text = true,
-  },
 }
 
- -- `/` cmdline setup.
+ -- `/` cmdline completion
 cmp.setup.cmdline('/', {
   sources = {
     { name = 'buffer' }
   }
 })
--- `:` cmdline setup.
+-- `:` cmdline completion
 cmp.setup.cmdline(':', {
   sources = cmp.config.sources({
     { name = 'path' }
