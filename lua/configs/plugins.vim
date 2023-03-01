@@ -33,6 +33,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'williamboman/mason-lspconfig.nvim'
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'onsails/lspkind-nvim'
+	Plug 'jay-babu/mason-nvim-dap.nvim'
+
+	" DAP
+	Plug 'mfussenegger/nvim-dap'
 
 	" completion
 	Plug 'hrsh7th/cmp-nvim-lsp'
