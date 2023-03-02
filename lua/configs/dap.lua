@@ -5,14 +5,37 @@ require("dap").adapters.python = {
   command = 'python3';
   args = { '-m', 'debugpy.adapter' };
 }
+
+require("dap").adapters.saithon = {
+  type = 'executable';
+  -- command = os.getenv('HOME') .. '/.envs/accurat/bin/python';
+  command = 'python';
+  args = { '-m', 'debugpy.adapter' };
+  options = {
+    envs = {
+      ENV_AUTH = os.getenv('HOME') .. '/work/accurat/master_config.json';
+      PYTHONPATH = os.getenv('HOME') .. '/work/accurat/saimon/';
+    };
+  };
+}
+
 require("dap").configurations.python = {
   {
     type = 'python';
     request = 'launch';
-    name = "Launch file";
+    name = "python";
     program = "${file}";
     pythonPath = function()
       return '/usr/bin/python3'
+    end;
+  },
+  {
+    type = 'saithon';
+    request = 'launch';
+    name = "saithon";
+    program = "${file}";
+    pythonPath = function()
+      return os.getenv('HOME') .. '/.envs/accurat/bin/python';
     end;
   },
 }
