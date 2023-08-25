@@ -1,6 +1,7 @@
 " for magma
 " remap escape
-imap jk <Esc>
+inoremap <Esc> ''
+imap kj <C-c>
 
 " general settings
 let mapleader=' '
@@ -9,6 +10,9 @@ set scrolloff=10
 set expandtab
 set mouse=a
 set laststatus=3
+
+" get paste
+nnoremap gp `[v`]
 
 " search settings
 set ignorecase
