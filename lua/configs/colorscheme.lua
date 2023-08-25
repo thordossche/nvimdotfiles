@@ -1,11 +1,9 @@
- local onedarkpro = require("onedarkpro")
-
- onedarkpro.setup({
+require("onedarkpro").setup({
    colors = {
      yellow = "#ffaf5f",
      red = "#E06C75",
      gray = "#7D828D",
-     },
+   },
   highlights = {
       CursorLineNr = { fg = "${yellow}", bg = "NONE" },
       TabLineSel = { bg = "NONE", fg = "${yellow}" },
@@ -31,5 +29,6 @@
       transparency = true,
   },
 })
-onedarkpro.load()
+
+vim.cmd("colorscheme onedark")
 vim.api.nvim_set_option('cursorlineopt', 'number')
