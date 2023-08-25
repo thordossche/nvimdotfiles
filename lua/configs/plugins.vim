@@ -37,6 +37,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 	" DAP
 	Plug 'mfussenegger/nvim-dap'
+	Plug 'theHamsta/nvim-dap-virtual-text'
+	Plug 'rcarriga/nvim-dap-ui'
 
 	" completion
 	Plug 'hrsh7th/cmp-nvim-lsp'

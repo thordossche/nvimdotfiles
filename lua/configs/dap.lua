@@ -1,4 +1,6 @@
 require("mason-nvim-dap").setup()
+require("nvim-dap-virtual-text").setup()
+require("dapui").setup()
 
 require("dap").adapters.python = {
   type = 'executable';
@@ -40,7 +42,7 @@ require("dap").configurations.python = {
   },
 }
 
-vim.fn.sign_define('DapBreakpoint',{ text ='🟥', texthl ='', linehl ='', numhl =''})
+vim.fn.sign_define('DapBreakpoint',{ text ='🟥', texthl ='red', linehl ='', numhl =''})
 vim.fn.sign_define('DapStopped',{ text ='▶️', texthl ='', linehl ='', numhl =''})
 
 
@@ -49,5 +51,7 @@ vim.keymap.set('n', '<leader>s', require 'dap'.step_over)
 vim.keymap.set('n', '<leader>i', require 'dap'.step_into)
 vim.keymap.set('n', '<leader>o', require 'dap'.step_out)
 vim.keymap.set('n', '<leader>b', require 'dap'.toggle_breakpoint)
+vim.keymap.set('n', '<leader>dr', require 'dap'.repl.open)
+vim.keymap.set('n', '<leader>do', require 'dapui'.toggle)
 
 
