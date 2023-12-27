@@ -42,6 +42,9 @@ map <PageDown> <C-d>
 
 " tabs
 autocmd Filetype vue setlocal ts=2 sw=2 sts=0 noexpandtab
+let g:python_highlight_space_errors = 0
+
+
 
 nnoremap <silent><expr> <leader>r  :MagmaEvaluateOperator<CR>
 " nnoremap <silent>       <leader>rr :MagmaEvaluateLine<CR>
@@ -52,6 +55,8 @@ nnoremap <silent>       <leader>ro :MagmaShowOutput<CR>
 
 let g:magma_automatically_open_output = v:false
 let g:magma_image_provider = "ueberzug"
+
+let g:ftplugin_sql_omni_key = '<C-t>'
 
 " :CloseAllFloatingWindows
 " Closes all floating windows, useful for cleaning up messed up pop-ups
