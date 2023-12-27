@@ -1,6 +1,7 @@
 vim.cmd('source $HOME/.config/nvim/lua/configs/plugins.vim')
 vim.cmd('source $HOME/.config/nvim/lua/configs/settings.vim')
 vim.cmd('source $HOME/.config/nvim/lua/configs/scripts.vim')
+vim.cmd('source $HOME/.config/nvim/lua/configs/databases.vim')
 
 require('configs.colorscheme')
 require('configs.otherplugins')
@@ -13,3 +14,4 @@ require('configs.dap')
 require('configs.lsp.init')
 require('configs.lsp.cmp')
 require('configs.lsp.luasnip')
+require('configs.harpoon')

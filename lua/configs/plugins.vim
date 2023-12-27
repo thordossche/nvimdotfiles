@@ -55,6 +55,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	" treesitter
 	Plug 'nvim-treesitter/nvim-treesitter'
 	Plug 'nvim-treesitter/playground'
+	
+	" databases
+	Plug 'tpope/vim-dadbod'
+	Plug 'kristijanhusak/vim-dadbod-ui'
+	Plug 'kristijanhusak/vim-dadbod-completion'
   
   " other
 	Plug 'metakirby5/codi.vim'
@@ -62,5 +67,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'akinsho/toggleterm.nvim'
 	Plug 'lewis6991/gitsigns.nvim'
 	Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
+	Plug 'ThePrimeagen/harpoon', { 'branch': 'harpoon2' }
+
+
 
 call plug#end()
