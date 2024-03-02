@@ -68,6 +68,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'lewis6991/gitsigns.nvim'
 	Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
 	Plug 'ThePrimeagen/harpoon', { 'branch': 'harpoon2' }
+	Plug 'ThePrimeagen/git-worktree.nvim'
 
 
 
