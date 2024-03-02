@@ -40,6 +40,10 @@ vnoremap <leader>p "+P
 map <PageUp> <C-u>
 map <PageDown> <C-d>
 
+" highlights
+nnoremap <C-S> :nohlsearch<CR>:diffupdate<CR>:normal! <C-L><CR>
+
+
 " tabs
 autocmd Filetype vue setlocal ts=2 sw=2 sts=0 noexpandtab
 let g:python_highlight_space_errors = 0
