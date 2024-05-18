@@ -4,7 +4,10 @@ opt.number = true
 opt.relativenumber = true
 
 opt.scrolloff = 10
+
 opt.expandtab = true
+opt.smarttab = true
+opt.shiftwidth = 4
 
 opt.ignorecase = true
 opt.smartcase = true
