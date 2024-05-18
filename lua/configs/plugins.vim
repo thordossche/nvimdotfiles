@@ -21,6 +21,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	" moving
 	Plug 'ggandor/leap.nvim'
 
+	" tmux
+	Plug 'christoomey/vim-tmux-navigator'
+
 	" telescope
 	Plug 'nvim-lua/popup.nvim'
 	Plug 'nvim-lua/plenary.nvim'
@@ -39,6 +42,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'mfussenegger/nvim-dap'
 	Plug 'theHamsta/nvim-dap-virtual-text'
 	Plug 'rcarriga/nvim-dap-ui'
+	Plug 'nvim-neotest/nvim-nio'
 
 	" completion
 	Plug 'hrsh7th/cmp-nvim-lsp'
@@ -69,6 +73,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
 	Plug 'ThePrimeagen/harpoon', { 'branch': 'harpoon2' }
 	Plug 'ThePrimeagen/git-worktree.nvim'
+
 
 
 
