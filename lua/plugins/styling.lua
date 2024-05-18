@@ -41,6 +41,19 @@ return {
         "MunifTanjim/nui.nvim",
         "rcarriga/nvim-notify",
         }
+    },
+    {
+        'nvim-lualine/lualine.nvim',
+        opts = {
+            options = {
+                component_separators = { left = '', right = ''},
+            },
+            sections = {
+                lualine_c = {'%=', 'filename'},
+                lualine_x = {'filetype'},
+            },
+        }
     }
+
 
 }
