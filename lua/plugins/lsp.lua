@@ -8,17 +8,26 @@ return {
           { "folke/neodev.nvim", opts = {} },
 
         },
+        lazy = false,
         config = function()
             require("mason").setup()
             local mason_lsp = require("mason-lspconfig")
-            require("lspconfig")
 
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+            local lspconfig = require("lspconfig")
+
+            lspconfig.lua_ls.setup({
+                capabilities = capabilities
+            })
+            -- lspconfig.pyright.setup({
+            --     capabilities = capabilities
+            -- })
+            lspconfig.pyright.setup({
+            })
 
             vim.api.nvim_create_autocmd("LspAttach", {
                 callback = function(args)
-                    local bufnr = args.buf
-                    local client = assert(vim.lsp.get_client_by_id(args.data.client_id), "must have valid client")
-
                     vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
                     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
                     vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = 0 })
@@ -31,18 +40,6 @@ return {
                 end,
             })
 
-            local servers = {
-                -- Add config if needed
-            }
-
-            mason_lsp.setup_handlers {
-                function(server_name)
-                    require('lspconfig')[server_name].setup {
-                        capabilities = capabilities,
-                        settings = servers[server_name],
-                    }
-                end,
-            }
 
         end
     }
