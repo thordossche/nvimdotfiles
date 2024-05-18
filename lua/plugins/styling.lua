@@ -29,5 +29,18 @@ return {
             vim.cmd("colorscheme onedark")
             vim.api.nvim_set_option('cursorlineopt', 'number')
         end
+    },
+    {
+        'kyazdani42/nvim-web-devicons'
+    },
+    {
+      "folke/noice.nvim",
+      event = "VeryLazy",
+      opts = {},
+      dependencies = {
+        "MunifTanjim/nui.nvim",
+        "rcarriga/nvim-notify",
+        }
     }
+
 }
