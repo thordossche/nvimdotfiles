@@ -36,11 +36,31 @@ return {
     {
       "folke/noice.nvim",
       event = "VeryLazy",
-      opts = {},
       dependencies = {
         "MunifTanjim/nui.nvim",
         "rcarriga/nvim-notify",
-        }
+      },
+      config = function ()
+        require("noice").setup({
+            routes = {
+                {
+                    view = "notify",
+                    filter = { event = "msg_showmode" },
+                    opts = { skip = true },
+                },
+                {
+                    filter = {
+                        event = "msg_show",
+                        kind = "",
+                    },
+                    opts = { skip = true },
+                },
+            }
+        })
+        require("notify").setup({
+            background_colour = "#000000",
+        })
+      end
     },
     {
         'nvim-lualine/lualine.nvim',
@@ -53,7 +73,42 @@ return {
                 lualine_x = {'filetype'},
             },
         }
+    },
+    {
+        'akinsho/bufferline.nvim',
+        version = "*",
+        dependencies = 'nvim-tree/nvim-web-devicons',
+        config = function ()
+            require('bufferline').setup {
+                options = {
+                    mode = "buffers",
+                    numbers = "none",
+                    close_command = "write | Bdelete! %d",
+                    right_mouse_command = "write | Bdelete! %d",
+                    left_mouse_command = "buffer %d",
+                    max_name_length = 18,
+                    max_prefix_length = 15,
+                    tab_size = 18,
+                    diagnostics = false,
+                    diagnostics_update_in_insert = false,
+                    buffer_close_icon= "",
+                    show_buffer_icons = true,
+                    show_tab_indicators = true,
+                },
+                highlights = {
+                    indicator_selected = {
+                        guifg = "NONE",
+                        guibg = "NONE",
+                    },
+                }
+            }
+            vim.keymap.set('n', 'H', ':BufferLineCyclePrev<CR>', {silent = true})
+            vim.keymap.set('n', 'L', ':BufferLineCycleNext<CR>', {silent = true})
+            vim.keymap.set('n', 'Q', ':write | Bdelete<CR>', {silent = true})
+
+        end
     }
+
 
 
 }
