@@ -1,19 +1,17 @@
-vim.cmd('source $HOME/.config/nvim/lua/configs/plugins.vim')
-vim.cmd('source $HOME/.config/nvim/lua/configs/settings.vim')
-vim.cmd('source $HOME/.config/nvim/lua/configs/scripts.vim')
-vim.cmd('source $HOME/.config/nvim/lua/configs/databases.vim')
+vim.g.mapleader = ' '
 
-require('configs.colorscheme')
-require('configs.otherplugins')
-require('configs.treesitter')
-require('configs.nvimtree')
-require('configs.telescope')
-require('configs.toggleterm')
-require('configs.bufferline')
-require('configs.dap')
-require('configs.lsp.init')
-require('configs.lsp.cmp')
-require('configs.lsp.luasnip')
-require('configs.harpoon')
-require('configs.worktree')
-require('configs.tmux')
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup("plugins")
