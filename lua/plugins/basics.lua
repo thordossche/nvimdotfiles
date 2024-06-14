@@ -5,11 +5,6 @@ return {
         opts = {}
     },
     {
-        'numToStr/Comment.nvim',
-        lazy = false,
-        opts = {}
-    },
-    {
         'windwp/nvim-autopairs',
         event = "InsertEnter",
         opts = {}
