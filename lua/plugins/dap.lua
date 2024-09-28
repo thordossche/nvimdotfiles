@@ -9,50 +9,41 @@ return {
             "mfussenegger/nvim-dap-python",
         },
         config = function()
-            local dap = require "dap"
-            local ui = require "dapui"
+            local dap = require("dap")
+            local dapui = require("dapui")
 
-            require("dapui").setup()
+            -- Setup DAP UI
+            dapui.setup()
 
+            -- Setup DAP virtual text
             require("nvim-dap-virtual-text").setup()
 
-            require('dap-python').setup('python')
-            table.insert(require('dap').configurations.python, {
-              type = 'python',
-              request = 'launch',
-              name = 'My custom launch configuration',
-              program = '${file}',
-              -- ... more options, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings
+            -- Setup Python DAP
+            require("dap-python").setup("python") -- Or use an absolute path to the python executable
+
+            -- Custom Python configuration (optional)
+            table.insert(dap.configurations.python, {
+                type = 'python',
+                request = 'launch',
+                name = 'Launch current file',
+                program = '${file}',
+                console = 'integratedTerminal',
+                pythonPath = function()
+                    -- Change this to the path of your Python interpreter with debugpy installed
+                    return 'python' -- Replace with full path if necessary
+                end,
             })
 
-            -- dap.adapters.python = {
-            --   type = 'executable';
-            --   command = 'python';
-            --   args = { '-m', 'debugpy.adapter' };
-            -- }
-            --
-            -- dap.configurations.python = {
-            --   {
-            --     type = 'python';
-            --     request = 'launch';
-            --     name = "Launch file";
-            --     program = "${file}";
-            --     pythonPath = function()
-            --       return 'python'
-            --     end;
-            --   },
-            -- }
-
-              -- ... more options, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings
-
+            -- Key mappings for DAP
             vim.keymap.set("n", "<space>b", dap.toggle_breakpoint)
             vim.keymap.set("n", "<space>gb", dap.run_to_cursor)
 
             -- Eval var under cursor
             vim.keymap.set("n", "<space>?", function()
-                require("dapui").eval(nil, { enter = true })
+                dapui.eval(nil, { enter = true })
             end)
 
+            -- DAP control key mappings
             vim.keymap.set("n", "<F1>", dap.continue)
             vim.keymap.set("n", "<F2>", dap.step_into)
             vim.keymap.set("n", "<F3>", dap.step_over)
@@ -60,18 +51,19 @@ return {
             vim.keymap.set("n", "<F5>", dap.step_back)
             vim.keymap.set("n", "<F10>", dap.restart)
 
-            dap.listeners.before.attach.dapui_config = function()
-                ui.open()
+            -- Automatically open UI when debugging starts
+            dap.listeners.after.event_initialized["dapui_config"] = function()
+                dapui.open()
             end
-            dap.listeners.before.launch.dapui_config = function()
-                ui.open()
+
+            -- Automatically close UI when debugging stops
+            dap.listeners.before.event_terminated["dapui_config"] = function()
+                dapui.close()
             end
-            dap.listeners.before.event_terminated.dapui_config = function()
-                ui.close()
-            end
-            dap.listeners.before.event_exited.dapui_config = function()
-                ui.close()
+            dap.listeners.before.event_exited["dapui_config"] = function()
+                dapui.close()
             end
         end,
     },
 }
+
