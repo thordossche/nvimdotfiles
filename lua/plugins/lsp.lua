@@ -1,5 +1,18 @@
 return {
     {
+        "williamboman/mason.nvim",
+        opts = {
+            ensure_installed = {
+                "mypy",
+                "pyright",
+                "lua-language-server",
+                "bash-language-server",
+                "dockerfile-language-server",
+                "docker-compose-language-service",
+            }
+        }
+    },
+    {
         "neovim/nvim-lspconfig",
         dependencies = {
           "williamboman/mason.nvim",
@@ -11,7 +24,9 @@ return {
         lazy = false,
         config = function()
             require("mason").setup()
-            local mason_lsp = require("mason-lspconfig")
+            require("mason-lspconfig").setup {
+                ensure_installed = { "pyright" },
+            }
 
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -20,10 +35,26 @@ return {
             lspconfig.lua_ls.setup({
                 capabilities = capabilities
             })
-            -- lspconfig.pyright.setup({
-            --     capabilities = capabilities
-            -- })
+
+            lspconfig.elixirls.setup({
+                cmd = { "elixir-ls" },
+                capabilities = capabilities
+            })
+
+            lspconfig.bashls.setup({
+                capabilities = capabilities
+            })
+            lspconfig.jdtls.setup({
+                capabilities = capabilities
+            })
             lspconfig.pyright.setup({
+                capabilities = capabilities
+            })
+            lspconfig.dockerls.setup({
+                capabilities = capabilities
+            })
+            lspconfig.docker_compose_language_service.setup({
+                capabilities = capabilities
             })
 
             vim.api.nvim_create_autocmd("LspAttach", {
@@ -40,7 +71,22 @@ return {
                 end,
             })
 
-
         end
+    },
+    {
+        "mfussenegger/nvim-lint",
+        config = function ()
+            local lint = require('lint')
+            lint.linters_by_ft = {
+                python = { "mypy" }
+            }
+
+            vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+                callback = function()
+                    lint.try_lint()
+                end
+            })
+        end
+
     }
 }
