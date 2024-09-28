@@ -34,35 +34,6 @@ return {
         'kyazdani42/nvim-web-devicons'
     },
     {
-      "folke/noice.nvim",
-      event = "VeryLazy",
-      dependencies = {
-        "MunifTanjim/nui.nvim",
-        "rcarriga/nvim-notify",
-      },
-      config = function ()
-        require("noice").setup({
-            routes = {
-                {
-                    view = "notify",
-                    filter = { event = "msg_showmode" },
-                    opts = { skip = true },
-                },
-                {
-                    filter = {
-                        event = "msg_show",
-                        kind = "",
-                    },
-                    opts = { skip = true },
-                },
-            }
-        })
-        require("notify").setup({
-            background_colour = "#000000",
-        })
-      end
-    },
-    {
         'nvim-lualine/lualine.nvim',
         opts = {
             options = {
@@ -83,8 +54,8 @@ return {
                 options = {
                     mode = "buffers",
                     numbers = "none",
-                    close_command = "write | Bdelete! %d",
-                    right_mouse_command = "write | Bdelete! %d",
+                    close_command = "write | bd! %d",
+                    right_mouse_command = "write | bd! %d",
                     left_mouse_command = "buffer %d",
                     max_name_length = 18,
                     max_prefix_length = 15,
@@ -104,7 +75,7 @@ return {
             }
             vim.keymap.set('n', 'H', ':BufferLineCyclePrev<CR>', {silent = true})
             vim.keymap.set('n', 'L', ':BufferLineCycleNext<CR>', {silent = true})
-            vim.keymap.set('n', 'Q', ':write | Bdelete<CR>', {silent = true})
+            vim.keymap.set('n', 'Q', ':write | :bd<CR>', {silent = true})
 
         end
     }
