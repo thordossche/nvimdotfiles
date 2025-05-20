@@ -25,7 +25,8 @@ return {
     config = function()
       require("mason").setup()
       require("mason-lspconfig").setup {
-        ensure_installed = { "pyright", "ruff" },
+        ensure_installed    = { "pyright", "ruff" },
+        automatic_enable    = false,
       }
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
