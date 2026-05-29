@@ -20,8 +20,7 @@ opt.splitright = true
 opt.mouse = 'a'
 opt.laststatus = 3
 
--- Might want to add this later?
--- vim.g.python_highlight_space_errors = 0
--- let g:python_highlight_space_errors = 0
+opt.completeopt = { "menu", "menuone", "noselect", "popup" }
+opt.shortmess:append("c")
 
 

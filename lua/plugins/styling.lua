@@ -27,7 +27,7 @@ return {
             })
 
             vim.cmd("colorscheme onedark")
-            vim.api.nvim_set_option('cursorlineopt', 'number')
+            vim.opt.cursorlineopt = 'number'
         end
     },
     {
