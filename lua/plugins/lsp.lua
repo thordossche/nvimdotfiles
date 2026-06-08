@@ -1,13 +1,13 @@
 return {
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = { "lua-language-server" },
-    },
+    opts = {},
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    opts = {},
+    opts = {
+      ensure_installed = { "lua_ls", "elixirls", "pyright", "ruff" },
+    },
     dependencies = {
       "williamboman/mason.nvim",
       "neovim/nvim-lspconfig",
@@ -31,8 +31,21 @@ return {
         },
       })
 
+      vim.lsp.config('elixirls', {})
+
+      vim.lsp.config('pyright', {})
+
+      vim.lsp.config('ruff', {
+        on_attach = function(client)
+          client.server_capabilities.hoverProvider = false
+        end,
+      })
+
 
       vim.lsp.enable('lua_ls')
+      vim.lsp.enable('elixirls')
+      vim.lsp.enable('pyright')
+      vim.lsp.enable('ruff')
 
       vim.diagnostic.config({ virtual_text = true })
 
